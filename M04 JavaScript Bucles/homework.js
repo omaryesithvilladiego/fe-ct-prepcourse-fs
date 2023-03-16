@@ -5,14 +5,46 @@ function obtenerMayor(x, y) {
    // Retornar el número más grande.
    // Si son iguales, retornar cualquiera de los dos.
    // Tu código:
+ 
+
+
+   var retornado 
+  if(x>y) {
+   return x
+  } else if(y>x) {
+   return y
+  } else if (x=y) {
+   cualquiera()
+  }
+   
+   function cualquiera() {
+     
+      aleatoreo = Math.random()
+      if(aleatoreo > 0.5) {
+         retornado = x
+
+      } else {
+         retornado = y
+      }
+   }
+   return retornado
+
+   
 }
+
 
 function mayoriaDeEdad(edad) {
    // Determinar si la persona puede ingresar al evento según su edad.
    // Si tiene 18 años ó más debe retornar el string: "Allowed".
    // Caso contrario: "Not allowed".
    // Tu código:
+   if(edad>18) {
+      return "Allowed"
+   } else {
+      return "Not allowed"
+   }
 }
+
 
 function conection(status) {
    // El argumento "status" representa el estado de conexión de un usuario.
@@ -21,7 +53,20 @@ function conection(status) {
    // De lo contrario, presumimos que el usuario está "Offline".
    // Retornar el estado de conexión del usuario.
    // Tu código:
+
+   if(status === 1) {
+      return "Online"
+   } else if(status === 2) {
+      return "Away"
+   } else {
+      return "Offline"
+   }
+
+
+
 }
+
+
 
 function saludo(idioma) {
    // Retornar un saludo en tres diferentes lenguajes:
@@ -30,6 +75,16 @@ function saludo(idioma) {
    // Si "idioma" es "ingles", devuelve "Hello!".
    // Si "idioma" no es ninguno de los anteriores o es `undefined` devuelve "Hola!".
    // Tu código:
+   if(idioma === "aleman" ) {
+      return "Guten Tag!"
+   } else if (idioma === "mandarin") {
+      return "Ni Hao!"
+   } else if (idioma === "ingles") {
+      return "Hello!"
+   } else {
+      return "undefined"
+   }
+
 }
 
 function colors(color) {
@@ -101,7 +156,17 @@ function tieneTresDigitos(num) {
    // Si el número recibido tiene tres dígitos retornar true.
    // Caso contrario, retornar false.
    // Tu código:
+   var condicion = num / 1000
+   if(condicion > 0.1 && condicion<1) {
+      return true
+   } else if(condicion < 0.1) {
+      return false
+   } else {
+      return false
+   }
 }
+
+
 
 function doWhile(num) {
    // Implementar una función que aumente el valor recibido en 5 hasta un límite de 8 veces.
