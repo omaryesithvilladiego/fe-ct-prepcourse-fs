@@ -5,9 +5,6 @@ function obtenerMayor(x, y) {
    // Retornar el número más grande.
    // Si son iguales, retornar cualquiera de los dos.
    // Tu código:
- 
-
-
    var retornado 
   if(x>y) {
    return x
@@ -96,18 +93,49 @@ function colors(color) {
    // Si no es ninguno de esos colores           --> "Color not found".
    // IMPORTANTE: utilizar el statement SWITCH.
    // Tu código:
+
+   switch(color) {
+      case "blue":
+         return "This is blue"
+         break
+      case "red":
+         return "This is red"
+         break
+      case "green":
+         return "This is green"
+         break
+      case "orange":
+         return "This is orange"
+         break
+
+      default:
+         return "Color not found"
+         break
+   }
 }
+
 
 function esDiezOCinco(num) {
    // Retornar true si "num" es 10 o 5.
    // De lo contrario, retornar false.
    // Tu código:
+   if(num == 5 || num == 10) {
+      return true
+   } else {
+      return false
+   }
 }
+
 
 function estaEnRango(num) {
    // Retornar true si "num" es menor que 50 y mayor que 20.
    // De lo contrario, retornar false.
    // Tu código:
+   if(num < 50 && num > 20) {
+      return true
+   } else {
+      return false
+   }
 }
 
 function esEntero(num) {
@@ -117,6 +145,7 @@ function esEntero(num) {
    // Ejemplo: (-10) ---> true
    // De lo contrario, retorna false.
    // Tu código:
+   
 }
 
 function fizzBuzz(num) {
