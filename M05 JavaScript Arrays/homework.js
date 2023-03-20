@@ -127,6 +127,20 @@ function multiplicarArgumentos() {
    // Si no se pasan argumentos retorna 0. Si se pasa un argumento, simplemente retórnalo.
    // [PISTA]: "arguments" es un arreglo.
    // Tu código:
+   var multiplicar = 1
+   if(arguments.length === 0) {
+      return 0
+   } else if(arguments.length === 1) {
+      return arguments[0]
+   } else {
+      for(let i = 0; i < arguments.length; i++) {
+         multiplicar = multiplicar * arguments[i]
+      }
+      return multiplicar
+      
+   }
+   
+
 
 }
 
@@ -135,26 +149,32 @@ function cuentoElementos(array) {
    // Tu código:
    var nuevoArray = []
    nuevoArray = array.filter(number => number > 18)
-   return nuevoArray
+   return nuevoArray.length
 }
 
-// console.log(cuentoElementos([8,45,19,56,81,2,6,4]))
+
 
 function diaDeLaSemana(numeroDeDia) {
    // Supongamos que los días de la semana se codifican como 1 = Domingo, 2 = Lunes y así sucesivamente.
    // Realiza una función que, dado el número del día de la semana, retorne: "Es fin de semana"
    // si el día corresponde a "Sábado" o "Domingo", y "Es dia laboral" en caso contrario.
    // Tu código:
-   
 
-   for(let i = 0; i < 7; i++) {
-      if(1 >= numeroDeDia && numeroDeDia <= 5) {
+   
+      
+      if(numeroDeDia >= 2 && numeroDeDia <= 6) {
          return "Es dia laboral"
       } else {
          return "Es fin de semana"
       }
-   }
+ 
+   
+
+   
+      
+   
 }
+
 
 
 
@@ -182,26 +202,75 @@ function todosIguales(array) {
    // Si todos los elementos del arreglo son iguales, retornar true.
    // Caso contrario retornar false.
    // Tu código:
+ 
+  var arrayCopia = array
+  var esIgual = false
+
+  for(var i = 0; i < array.length; i++) {
+   for(var j = 0; j< arrayCopia.length; j++) {
+      if(array[i] === arrayCopia[j]) {
+         esIgual = true
+      } else {
+         esIgual = false 
+         break
+      }
+   }
+  }
+  return esIgual
+ 
 }
+
+
 
 function mesesDelAño(array) {
    // El arreglo contiene algunos meses del año desordenados. Debes recorrerlo, buscar los meses "Enero",
    // "Marzo" y "Noviembre", guardarlos en un nuevo arreglo y retornarlo.
    // Si alguno de los meses no está, retornar el string: "No se encontraron los meses pedidos".
    // Tu código:
+   var founds = []
+   
+  for(let i = 0; i<array.length; i++) {
+   if(array[i] === "Enero" || array[i] === "Noviembre" || array[i] === "Marzo") {
+       founds.push(array[i])
+   }
+   
+  }
+   if(founds.length === 3) {
+      return founds
+   } else {
+   
+      return "No se encontraron los meses pedidos" 
+     
+   }
 }
+
+  
+
 
 function tablaDelSeis() {
    // Escribe una función que muestre la tabla de multiplicar del 6 (del 0 al 60).
    // La función devuelve un arreglo con los resultados de la tabla de multiplicar del 6 en orden creciente.
    // Tu código:
+   numeros = [0,1,2,3,4,5,6,7,8,9,10]
+   const tablaSeis = numeros.map(numero => numero * 6)
+   return tablaSeis
 }
+
+
 
 function mayorACien(array) {
    // La función recibe un arreglo con enteros entre 0 y 200.
    // Recorrerlo y retornar un arreglo con todos los valores mayores a 100 (no incluye el 100).
    // Tu código:
+   var mayores_a_cien = []
+  array.map((numero) => {
+      if(numero > 100) {
+         mayores_a_cien.push(numero)
+      }
+   })
+   return mayores_a_cien
 }
+
 
 /* ----------------------------------------------------------------------------------
 💪 EXTRA CREDIT EXTRA CREDIT EXTRA CREDIT EXTRA CREDIT EXTRA CREDIT  EXTRA CREDIT 💪
@@ -214,7 +283,27 @@ function breakStatement(num) {
    // la ejecución y retornar el string: "Se interrumpió la ejecución".
    // [PISTA]: utiliza el statement 'break'.
    // Tu código:
+   var retornado;
+   var arregloValores = []
+   for(let i = 0; i <= 9; i++) {
+      num = num + 2
+      arregloValores.push(num)
+      if(num === i) {
+         retornado = "Se interrumpió la ejecución"
+         break
+      } else if(arregloValores.length === 10){
+         retornado = arregloValores
+      }
+     
+   }
+   return retornado
 }
+
+
+
+
+
+
 
 function continueStatement(num) {
    // Iterar en un bucle aumentando en 2 el número recibido hasta un límite de 10 veces.
@@ -223,7 +312,22 @@ function continueStatement(num) {
    // se continua con la siguiente iteración.
    // [PISTA]: utiliza el statement 'continue'.
    // Tu código:
+   var retornado;
+   var arregloValores = []
+   for(let i = 0; i <= 9; i++) {
+      if(i === 5) {
+         continue
+      } 
+      num = num + 2
+      arregloValores.push(num)
+      retornado = arregloValores
+      
+     
+   }
+   return retornado
+
 }
+
 
 /*⚠️ NO MODIFIQUES NADA DEBAJO DE ESTO ⚠️*/
 module.exports = {
